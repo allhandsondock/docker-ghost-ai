@@ -16,3 +16,5 @@ COPY ai-bootstrap.js /opt/ai/
 # ENV APPLICATIONINSIGHTS_ROLE_INSTANCE GhostInstance
 # Lets use platform agnositic node method to load AI instead of monkey patching i.e. NODE_OPTIONS='--require "/opt/ai/ai-bootstrap.js"'
 ENV NODE_OPTIONS='--require /opt/ai/ai-bootstrap.js'
+
+CMD UPDATE migrations_lock set locked=0 where lock_key='km01
